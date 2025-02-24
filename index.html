@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI生活教练 - 你的个人成长伙伴</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- 引入样式文件 -->
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <div class="logo">
+            <h1>AI生活教练</h1>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">历史记录</a></li>
+                <li><a href="#">关于我们</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="main-content">
+        <!-- 对话区域 -->
+        <section class="chat-section">
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <!-- 消息内容将通过JavaScript动态添加 -->
+                </div>
+                <div class="chat-input-area">
+                    <textarea id="messageInput" placeholder="输入你的问题..." rows="3"></textarea>
+                    <button id="sendButton" class="send-button">发送</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 建议展示区 -->
+        <aside class="suggestions-section">
+            <div class="suggestions-container">
+                <h2>AI建议</h2>
+                <div class="suggestion-cards" id="suggestionCards">
+                    <!-- 建议卡片将通过JavaScript动态添加 -->
+                </div>
+            </div>
+            <div class="history-container">
+                <h2>历史记录</h2>
+                <div class="history-list" id="historyList">
+                    <!-- 历史记录将通过JavaScript动态添加 -->
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- 页脚区域 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 AI生活教练. All rights reserved.</p>
+            <div class="contact-info">
+                <p>联系我们：contact@aicoach.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 引入JavaScript文件 -->
+    <script src="scripts/main.js"></script>
+</body>
+</html>
