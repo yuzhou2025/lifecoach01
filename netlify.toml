@@ -1,9 +1,11 @@
 [build]
-command = "pip install -r requirements.txt && python server.py"
+command = "export VOLC_ACCESSKEY=$VOLC_ACCESSKEY && export VOLC_SECRETKEY=$VOLC_SECRETKEY && python -m pip install --upgrade pip && pip install -r requirements.txt && python server.py"
 publish = "public"
 
 [build.environment]
 PYTHON_VERSION = "3.9"
+PIP_NO_CACHE_DIR = "true"
+NODE_VERSION = "18"
 
 [[redirects]]
 from = "/api/*"
