@@ -5,9 +5,16 @@ from volcenginesdkarkruntime import Ark
 class DeepSeekClient:
     def __init__(self):
         # 从环境变量获取认证信息
+        ak = os.getenv('VOLC_ACCESSKEY')
+        sk = os.getenv('VOLC_SECRETKEY')
+        
+        # 验证必要的认证信息
+        if not (ak and sk):
+            raise ValueError("必须设置VOLC_ACCESSKEY和VOLC_SECRETKEY环境变量")
+            
         self.client = Ark(
-            ak=os.getenv('VOLC_ACCESSKEY'),
-            sk=os.getenv('VOLC_SECRETKEY'),
+            ak=ak,
+            sk=sk,
             timeout=httpx.Timeout(timeout=1800)
         )
         self.model = "ep-20250220113205-g59k8"
