@@ -18,8 +18,4 @@ sqlalchemy==2.0.27
 alembic==1.13.1
 
 # AI Runtime
-volcengine-python-sdk[ark]==1.0.125
-
-# Documentation
-mkdocs==1.5.3
-mkdocs-material==9.5.3
+volcengine-python-sdk==1.0.125
