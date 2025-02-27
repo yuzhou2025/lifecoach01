@@ -9,8 +9,22 @@ class DeepSeekClient:
         sk = os.getenv('VOLC_SECRETKEY')
         
         # 验证必要的认证信息
-        if not (ak and sk):
-            raise ValueError("必须设置VOLC_ACCESSKEY和VOLC_SECRETKEY环境变量")
+        if not ak or not sk:
+            missing_vars = []
+            if not ak:
+                missing_vars.append('VOLC'_ACCESSKEY)
+            if not sk:
+                missing_vars.append('VOLC_SECRETKEY')
+            raise ValueError(
+                f"缺少必要的环境变量: {', '.join(missing_vars)}\n"
+                "请在Netlify的环境变量设置中配置这些变量：\n"
+                "1. 登录Netlify管理控制台\n"
+                "2. 进入您的项目设置\n"
+                "3. 找到'Environment variables'部分\n"
+                "4. 添加以下环境变量：\n"
+                "   - VOLC_ACCESSKEY: 您的火山引擎访问密钥\n"
+                "   - VOLC_SECRETKEY: 您的火山引擎访问密钥密文"
+            )
             
         self.client = Ark(
             ak=ak,
