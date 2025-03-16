@@ -4,7 +4,7 @@ export const API_CONFIG = {
     // DeepSeek R1 API配置
     DEEPSEEK_API_KEY: process.env.VOLC_ACCESSKEY || '',  // 从环境变量读取API密钥
     DEEPSEEK_API_SECRET: process.env.VOLC_SECRETKEY || '',  // 从环境变量读取API密钥
-    DEEPSEEK_API_ENDPOINT: 'https://api.deepseek.com/v1',  // 请替换为实际的API端点
+    DEEPSEEK_API_ENDPOINT: 'https://ark.cn-beijing.volces.com/api/v3/chat/completions',  // 火山引擎DeepSeek API端点
     
     // API请求配置
     REQUEST_TIMEOUT: 30000,  // 请求超时时间（毫秒）

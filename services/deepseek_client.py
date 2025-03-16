@@ -12,18 +12,19 @@ class DeepSeekClient:
         if not ak or not sk:
             missing_vars = []
             if not ak:
-                missing_vars.append('VOLC'_ACCESSKEY)
+                missing_vars.append('VOLC_ACCESSKEY')
             if not sk:
                 missing_vars.append('VOLC_SECRETKEY')
             raise ValueError(
                 f"缺少必要的环境变量: {', '.join(missing_vars)}\n"
-                "请在Netlify的环境变量设置中配置这些变量：\n"
-                "1. 登录Netlify管理控制台\n"
+                "请在Vercel的环境变量设置中配置这些变量：\n"
+                "1. 登录Vercel管理控制台\n"
                 "2. 进入您的项目设置\n"
-                "3. 找到'Environment variables'部分\n"
+                "3. 点击'Environment Variables'\n"
                 "4. 添加以下环境变量：\n"
                 "   - VOLC_ACCESSKEY: 您的火山引擎访问密钥\n"
-                "   - VOLC_SECRETKEY: 您的火山引擎访问密钥密文"
+                "   - VOLC_SECRETKEY: 您的火山引擎访问密钥密文\n"
+                "注意：确保这些环境变量与vercel.json中的配置保持一致"
             )
             
         self.client = Ark(
